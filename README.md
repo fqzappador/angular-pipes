@@ -1,27 +1,65 @@
-# Pipes
+# Angular Pipes
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.4.
+Pipes allow us to visually transform our data without changing its real value, in this way we can show data with a better user experience, below are the most used examples:
 
-## Development server
+# Variable:                             Pipe ( | )                             Output
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Captain America                         uppercase                           CAPTAIN AMERICA
+Captain America                         lowercase                           captain america
+Captain America                         slice:3                             tain America
+Captain America                         slice:0:3                           Cap
+1,2,3,4,5,6,7,8,9,10	                slice:1:5	                        2,3,4,5
+3.141592653589793	                    number:'3.0-0' (decimal)	        003
+3.141592653589793	                    number:'.0-2' (decimal)	            3.14
+0.235	                                percent	                            24%
+0.235	                                percent:'2.2-2'	                    23.50%
+1234.5	                                currency (USD for default)	        $1,234.50
+1234.5	                                currency:'EUR'	                    €1,234.50
+1234.5	                                currency:'GBP'	                    £1,234.50
+Sat Jun 13 2020 10:56:48 GMT-0400 	    date	                            Jun 13, 2020
+Sat Jun 13 2020 10:56:48 GMT-0400	    date:'medium'	                    Jun 13, 2020, 10:56:48 AM
+Sat Jun 13 2020 10:56:48 GMT-0400 	    date:'short'	                    6/13/20, 10:56 AM
+Sat Jun 13 2020 10:56:48 GMT-0400 	    date:'MMMM - dd'	                June - 13
+Sat Jun 13 2020 10:56:48 GMT-0400 	    date:'MMMM - dd':'':'fr'	        juin - 13
+Sat Jun 13 2020 10:56:48 GMT-0400 	    date:'MMMM - dd':'':'es'	        junio - 13
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Examples of slice pipe with ngFor:
 
-## Build
+array: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] | slice:5:10
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+6
+7
+8
+9
+10
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+array: string[] = ['Spiderman', 'Thor', 'Loki', 'Groot', 'Rocket', 'StarLord', 'IronMan'] | slice:4:10
 
-## Running end-to-end tests
+Rocket
+StarLord
+IronMan
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+json pipe - (object created with all characteristics you see) called heroe with pipe ( | ) json
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Example:
+
+heroe | json
+
+
+{
+  "name": "Logan",
+  "hidden": "Wolverine",
+  "age": 500,
+  "address": {
+    "street": "First",
+    "home": 20
+    }
+}
+
+
+# More in the repository. Download and enjoy your pipe that you need the most
+
+# in the app.component.html look all pipes, run ng serve and you will see all the pipes, where you will also find folders with created and custom pipes.

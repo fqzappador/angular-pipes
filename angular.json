@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "pipes"
+    }
+  },
+  "defaultProject": "pipes",
+  "cli": {
+    "analytics": "e5cec224-a12b-48a4-9717-7431b630edb4"
+  }
 }
